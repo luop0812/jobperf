@@ -1,0 +1,472 @@
+'8766':
+  gpus:
+    r4516u01n01:
+    - idx: 2
+      type: a40
+  nodelist:
+  - r4516u01n01
+  partition: gpu
+  userid: my458
+'8767':
+  gpus:
+    r4518u09n01:
+    - idx: 3
+      type: a40
+  nodelist:
+  - r4518u09n01
+  partition: gpu
+  userid: my458
+'8775':
+  gpus:
+    r4518u05n01:
+    - idx: 2
+      type: a40
+  nodelist:
+  - r4518u05n01
+  partition: gpu
+  userid: my458
+'8799':
+  gpus:
+    r4518u01n01:
+    - idx: 1
+      type: a40
+  nodelist:
+  - r4518u01n01
+  partition: gpu
+  userid: dy274
+'8974':
+  gpus:
+    r4518u09n01:
+    - idx: 1
+      type: a40
+  nodelist:
+  - r4518u09n01
+  partition: gpu
+  userid: dy274
+'8983':
+  gpus:
+    r4516u09n01:
+    - idx: 1
+      type: a40
+  nodelist:
+  - r4516u09n01
+  partition: gpu
+  userid: dy274
+'9007':
+  gpus:
+    r4518u01n01:
+    - idx: 0
+      type: a40
+    - idx: 2
+      type: a40
+  nodelist:
+  - r4518u01n01
+  partition: gpu
+  userid: th748
+'9008':
+  gpus:
+    r4519u13n01:
+    - idx: 2
+      type: a100
+  nodelist:
+  - r4519u13n01
+  partition: gpu
+  userid: ma2393
+'9009':
+  gpus:
+    r4519u04n01:
+    - idx: 0
+      type: a100
+  nodelist:
+  - r4519u04n01
+  partition: gpu
+  userid: ma2393
+'9010':
+  gpus:
+    r4519u13n01:
+    - idx: 0
+      type: a100
+  nodelist:
+  - r4519u13n01
+  partition: gpu
+  userid: ma2393
+'9011':
+  gpus:
+    r4519u13n01:
+    - idx: 3
+      type: a100
+  nodelist:
+  - r4519u13n01
+  partition: gpu
+  userid: ma2393
+'9012':
+  gpus:
+    r4519u13n01:
+    - idx: 1
+      type: a100
+  nodelist:
+  - r4519u13n01
+  partition: gpu
+  userid: ma2393
+'9034':
+  gpus:
+    r4516u16n01:
+    - idx: 1
+      type: h100
+  nodelist:
+  - r4516u16n01
+  partition: gpu
+  userid: ma2393
+'9035':
+  gpus:
+    r4507u13n01:
+    - idx: 2
+      type: h100
+  nodelist:
+  - r4507u13n01
+  partition: gpu
+  userid: ma2393
+'9053':
+  gpus:
+    r4518u01n01:
+    - idx: 3
+      type: a40
+  nodelist:
+  - r4518u01n01
+  partition: gpu
+  userid: jz875
+'9057':
+  gpus:
+    r4518u05n01:
+    - idx: 3
+      type: a40
+  nodelist:
+  - r4518u05n01
+  partition: gpu
+  userid: jc3999
+'9074':
+  gpus:
+    r4516u16n01:
+    - idx: 3
+      type: h100
+  nodelist:
+  - r4516u16n01
+  partition: gpu
+  userid: ma2393
+'9075':
+  gpus:
+    r4516u16n01:
+    - idx: 2
+      type: h100
+  nodelist:
+  - r4516u16n01
+  partition: gpu
+  userid: ma2393
+'9076':
+  gpus:
+    r4518u05n01:
+    - idx: 0
+      type: a40
+  nodelist:
+  - r4518u05n01
+  partition: gpu
+  userid: tl688
+'9078':
+  gpus:
+    r4519u04n01:
+    - idx: 2
+      type: a100
+  nodelist:
+  - r4519u04n01
+  partition: gpu
+  userid: zw346
+'9080':
+  gpus:
+    r4518u05n01:
+    - idx: 1
+      type: a40
+  nodelist:
+  - r4518u05n01
+  partition: gpu
+  userid: tl688
+'9081':
+  gpus:
+    r817u03n01: []
+  nodelist:
+  - r817u03n01
+  partition: week
+  userid: dy274
+'9082':
+  gpus:
+    r4519u01n01:
+    - idx: 8
+      type: a100.MIG.10gb
+  nodelist:
+  - r4519u01n01
+  partition: gpu_devel
+  userid: xh338
+'9087':
+  gpus:
+    r4519u10n01:
+    - idx: 3
+      type: a100
+  nodelist:
+  - r4519u10n01
+  partition: gpu
+  userid: dy274
+'9095':
+  gpus:
+    r817u09n04: []
+  nodelist:
+  - r817u09n04
+  partition: day
+  userid: pl543
+'9097':
+  gpus:
+    r817u15n01: []
+  nodelist:
+  - r817u15n01
+  partition: day
+  userid: pl543
+'9098':
+  gpus:
+    r817u09n03: []
+  nodelist:
+  - r817u09n03
+  partition: day
+  userid: dfl32
+'9099':
+  gpus:
+    r4519u01n01:
+    - idx: 4
+      type: a100.MIG.20gb
+  nodelist:
+  - r4519u01n01
+  partition: gpu_devel
+  userid: dfl32
+'9100':
+  gpus:
+    r817u09n03: []
+  nodelist:
+  - r817u09n03
+  partition: day
+  userid: pl543
+'9126':
+  gpus:
+    r817u15n02: []
+  nodelist:
+  - r817u15n02
+  partition: day
+  userid: pl543
+'9127':
+  gpus:
+    r4516u05n01: []
+  nodelist:
+  - r4516u05n01
+  partition: gpu
+  userid: pl543
+'9131':
+  gpus:
+    r4516u01n01:
+    - idx: 3
+      type: a40
+  nodelist:
+  - r4516u01n01
+  partition: gpu
+  userid: dfl32
+'9133':
+  gpus:
+    r4516u01n01:
+    - idx: 0
+      type: a40
+  nodelist:
+  - r4516u01n01
+  partition: gpu
+  userid: dfl32
+'9134':
+  gpus:
+    r4516u01n01:
+    - idx: 1
+      type: a40
+  nodelist:
+  - r4516u01n01
+  partition: gpu
+  userid: dfl32
+'9136':
+  gpus:
+    r4516u09n01:
+    - idx: 2
+      type: a40
+  nodelist:
+  - r4516u09n01
+  partition: gpu
+  userid: dfl32
+'9149':
+  gpus:
+    r4516u09n01:
+    - idx: 3
+      type: a40
+  nodelist:
+  - r4516u09n01
+  partition: gpu
+  userid: dfl32
+'9150':
+  gpus:
+    r4518u09n01:
+    - idx: 2
+      type: a40
+  nodelist:
+  - r4518u09n01
+  partition: gpu
+  userid: dfl32
+'9169':
+  gpus:
+    r4519u07n01:
+    - idx: 3
+      type: a100
+  nodelist:
+  - r4519u07n01
+  partition: gpu
+  userid: dy274
+'9171':
+  gpus:
+    r4519u16n01:
+    - idx: 3
+      type: a100
+  nodelist:
+  - r4519u16n01
+  partition: gpu
+  userid: dy274
+'9172':
+  gpus:
+    r4519u16n01:
+    - idx: 0
+      type: a100
+  nodelist:
+  - r4519u16n01
+  partition: gpu
+  userid: dy274
+'9173':
+  gpus:
+    r4519u16n01:
+    - idx: 1
+      type: a100
+  nodelist:
+  - r4519u16n01
+  partition: gpu
+  userid: dy274
+'9174':
+  gpus:
+    r4519u10n01:
+    - idx: 2
+      type: a100
+  nodelist:
+  - r4519u10n01
+  partition: gpu
+  userid: dy274
+'9175':
+  gpus:
+    r4519u10n01:
+    - idx: 0
+      type: a100
+  nodelist:
+  - r4519u10n01
+  partition: gpu
+  userid: dy274
+'9176':
+  gpus:
+    r4519u10n01:
+    - idx: 1
+      type: a100
+  nodelist:
+  - r4519u10n01
+  partition: gpu
+  userid: dy274
+'9177':
+  gpus:
+    r4519u07n01:
+    - idx: 2
+      type: a100
+  nodelist:
+  - r4519u07n01
+  partition: gpu
+  userid: dy274
+'9178':
+  gpus:
+    r4519u07n01:
+    - idx: 0
+      type: a100
+  nodelist:
+  - r4519u07n01
+  partition: gpu
+  userid: dy274
+'9180':
+  gpus:
+    r4518u09n01:
+    - idx: 0
+      type: a40
+  nodelist:
+  - r4518u09n01
+  partition: gpu
+  userid: my458
+'9202':
+  gpus:
+    r4516u09n01:
+    - idx: 0
+      type: a40
+  nodelist:
+  - r4516u09n01
+  partition: gpu
+  userid: jz875
+'9222':
+  gpus:
+    r4519u01n01:
+    - idx: 0
+      type: a100.MIG.20gb
+  nodelist:
+  - r4519u01n01
+  partition: gpu_devel
+  userid: pl543
+'9225':
+  gpus:
+    r4519u01n01:
+    - idx: 1
+      type: a100.MIG.20gb
+  nodelist:
+  - r4519u01n01
+  partition: gpu_devel
+  userid: jz875
+'9245':
+  gpus:
+    r817u09n05: []
+  nodelist:
+  - r817u09n05
+  partition: admintest
+  userid: tl397
+'9249':
+  gpus:
+    r4519u01n01:
+    - idx: 5
+      type: a100.MIG.20gb
+  nodelist:
+  - r4519u01n01
+  partition: gpu_devel
+  userid: ma2393
+'9258':
+  gpus:
+    r4519u16n01:
+    - idx: 2
+      type: a100
+  nodelist:
+  - r4519u16n01
+  partition: gpu
+  userid: dy274
+'9259':
+  gpus:
+    r4519u07n01:
+    - idx: 1
+      type: a100
+  nodelist:
+  - r4519u07n01
+  partition: gpu
+  userid: dy274
