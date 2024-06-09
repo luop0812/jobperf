@@ -73,7 +73,7 @@ class Parser:
     def _remove_tmp_file(self):
         if os.path.isfile(self._tmp_filename):
             os.remove(self._tmp_filename)
-        print("{0} is removed.".format(self._tmp_filename))
+#       print("{0} is removed.".format(self._tmp_filename))
 
 class JobParser(Parser):
 

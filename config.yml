@@ -9,3 +9,4 @@ idle_job_archive: /home/pl543/workspace/jobperf/data/archive/idle
 small_job_path: /home/pl543/workspace/jobperf/data/output/small
 small_job_archive: /home/pl543/workspace/jobperf/data/archive/small
 small_job_threshold: 10 GiB
+sample_frequency: 300 # seconds

@@ -116,7 +116,7 @@ for fn in os.listdir(config["job_info_path"]):
     if host in fn:
        jobhost.append(fn)
 
-print(jobhost)
+#print(jobhost)
 
 for fn in jobhost:
     jobid = fn.split(".")[0]
@@ -165,13 +165,13 @@ for fn in jobhost:
         else:
             id = idx
 
-        print(uuid)
+#       print(uuid)
 
         perf_metrics = _get_gpu_usage(id, uuid)
         perf_metrics["jobid"] = jobid
         perf_metrics["userid"] = jobinfo["userid"]
         perf_metrics["jobname"] = jobinfo["jobname"]
-        print(perf_metrics)
+#       print(perf_metrics)
         perfstr = "  - "
         ts = time.time()
         perfstr = perfstr + str(ts)
@@ -195,23 +195,23 @@ for fn in jobhost:
 
         # check if the GPU device is idle
         if num_procs == 0:
-            idle_fn = config["idle_job_path"]+"/"+jobid+"."+host+"."+str(id)
+            idle_fn = config["idle_job_path"]+"/"+jobid+"."+host+"."+str(idx)
             if not os.path.isfile(idle_fn):
                 Path(idle_fn).touch()
 
             with open(idle_fn, "a") as idlefile:
-                idlefile.write(str(ts))
+                idlefile.write(str(ts)+"\n")
 
         else:
             # check if the memory size is smaller than the small job threshold
             sm_threshold = _convert_to_mib(config["small_job_threshold"])
             if float(perf_metrics["mem_used"]) < sm_threshold:
-                small_fn = config["small_job_path"]+"/"+jobid+"."+host+"."+str(id)
+                small_fn = config["small_job_path"]+"/"+jobid+"."+host+"."+str(idx)
                 if not os.path.isfile(small_fn):
                     Path(small_fn).touch()
     
                 with open(small_fn, "a") as smallfile:
-                    smallfile.write(str(ts)+":"+perf_metrics["mem_total"]+":"+perf_metrics["mem_used"])
+                    smallfile.write(str(ts)+":"+perf_metrics["mem_total"]+":"+perf_metrics["mem_used"]+"\n")
 
         perfile.close()
 

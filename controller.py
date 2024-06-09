@@ -13,6 +13,6 @@ files = glob.glob(job_info_path+"/*")
 for f in files:
     os.remove(f)
 
-myparser = parser.JobParser("scontrol show job -d")
+myparser = parser.JobParser("/opt/slurm/current/bin/scontrol show job -d")
 myparser.get_records()
 myparser.dump_records(job_info_path,"")
