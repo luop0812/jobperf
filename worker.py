@@ -97,7 +97,6 @@ class Worker:
     
         return ret_metrics
     
-    
     def _convert_to_mib(self, size_str):
         _ = size_str.split(' ')
         size = float(_[0])

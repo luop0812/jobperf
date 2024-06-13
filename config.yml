@@ -1,12 +1,12 @@
 # Each job has a folder $perf_path_prefix/job_id. 
 # Each node assigned to the job will write to a file named with the nodename. 
 ---
-job_info_path: /home/pl543/workspace/jobperf-devel/data/individual
-perf_path_prefix: /home/pl543/workspace/jobperf-devel/data/output/perf
-perf_user_prefix: /home/pl543/workspace/jobperf-devel/data/user
-idle_job_path: /home/pl543/workspace/jobperf-devel/data/output/idle
-idle_job_archive: /home/pl543/workspace/jobperf-devel/data/archive/idle
-small_job_path: /home/pl543/workspace/jobperf-devel/data/output/small
-small_job_archive: /home/pl543/workspace/jobperf-devel/data/archive/small
+job_info_path: /home/pl543/workspace/jobperf/data/individual
+perf_path_prefix: /home/pl543/workspace/jobperf/data/output/perf
+perf_user_prefix: /home/pl543/workspace/jobperf/data/user
+idle_job_path: /home/pl543/workspace/jobperf/data/output/idle
+idle_job_archive: /home/pl543/workspace/jobperf/data/archive/idle
+small_job_path: /home/pl543/workspace/jobperf/data/output/small
+small_job_archive: /home/pl543/workspace/jobperf/data/archive/small
 small_job_threshold: 10 GiB
 sample_frequency: 300 # seconds
