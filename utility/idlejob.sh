@@ -6,5 +6,5 @@ module load miniconda
 export CONDA_ENVS_PATH=/home/pl543/workspace/conda
 conda activate pytorch_env
 PERFPATH=/home/pl543/project/jobperf
-export PYTHONPATH=${PERFPATH}/schedparser
-python ${PERFPATH}/controller.py
+export PYTHONPATH=${PERFPATH}/schedparser:${PERFPATH}
+python ${PERFPATH}/utility/idlejob.py $@

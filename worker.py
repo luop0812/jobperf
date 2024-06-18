@@ -1,9 +1,6 @@
 """
 input file:   jobid.nodename
 output files: jobid.perf, jobid.idle, jobid.small
-jobid.perf: timestamp:gpu_type:idx:uuid: 
-  - process_id, gpu_id, gpu_type, gpu_utilizaiton, vram_total, vram_usage, vram_utilization
-  - process_id ....
 """
 
 import platform
@@ -110,6 +107,15 @@ class Worker:
         else:
             sys.exit("Fatal error: size unit is not recognized")
 
+    def _print_metadata(self, jobid, jobinfo, host, file):
+        # if file is not opened for writing, return error
+        file.write("jobid: "+jobid+"\n")
+        file.write("userid: "+jobinfo["userid"]+"\n")
+        file.write("groupid: "+jobinfo["groupid"]+"\n")
+        file.write("jobname: "+jobinfo["jobname"]+"\n")
+        file.write("nodename: "+host+"\n")
+        file.write("start_timestamp: "+str(jobinfo["start_ts"])+"\n")
+
     def do_sampling(self):  
         host = platform.node().split(".")[0]
         
@@ -135,6 +141,7 @@ class Worker:
         
             for gpu in gpus:
                 idx = gpu["idx"]
+#               print(idx)
          
                 perf_fn = perf_path+"/"+host+"."+str(idx)
                 if not os.path.isfile(perf_fn): 
@@ -145,11 +152,9 @@ class Worker:
                         perfile.write("---\n")
             
                         # print meta data
-                        perfile.write("jobid: "+jobid+"\n")
-                        perfile.write("userid: "+jobinfo["userid"]+"\n")
-                        perfile.write("jobname: "+jobinfo["jobname"]+"\n")
-                        perfile.write("nodename: "+host+"\n")
-                        perfile.write("metrics:"+"\n")
+                        self._print_metadata(jobid, jobinfo, host, perfile)
+
+                        perfile.write("metrics:\n")
             
                         # create a symlink, pointing to perfile     
                         perf_user_path = config["perf_user_prefix"]+"/"+jobinfo["userid"]
@@ -167,12 +172,13 @@ class Worker:
                 else:
                     id = idx
         
+#               print(id)
 #               print(uuid)
         
                 perf_metrics = self._get_gpu_usage(id, uuid)
-                perf_metrics["jobid"] = jobid
-                perf_metrics["userid"] = jobinfo["userid"]
-                perf_metrics["jobname"] = jobinfo["jobname"]
+                #perf_metrics["jobid"] = jobid
+                #perf_metrics["userid"] = jobinfo["userid"]
+                #perf_metrics["jobname"] = jobinfo["jobname"]
 #               print(perf_metrics)
                 perfstr = "  - "
                 ts = time.time()
@@ -199,10 +205,15 @@ class Worker:
                 if num_procs == 0:
                     idle_fn = config["idle_job_path"]+"/"+jobid+"."+host+"."+str(idx)
                     if not os.path.isfile(idle_fn):
-                        Path(idle_fn).touch()
+                        with open(idle_fn, "w") as idlefile:
+                            # write comment
+                            idlefile.write("# timestamp\n")
+                            idlefile.write("---\n")
+                            self._print_metadata(jobid, jobinfo, host, idlefile)
+                            idlefile.write("metrics:\n")
         
                     with open(idle_fn, "a") as idlefile:
-                        idlefile.write(str(ts)+"\n")
+                        idlefile.write("  - "+str(ts)+"\n")
         
                 else:
                     # check if the memory size is smaller than the small job threshold
@@ -210,10 +221,15 @@ class Worker:
                     if float(perf_metrics["mem_used"]) < sm_threshold:
                         small_fn = config["small_job_path"]+"/"+jobid+"."+host+"."+str(idx)
                         if not os.path.isfile(small_fn):
-                            Path(small_fn).touch()
-            
+                            with open(small_fn, "w") as smallfile:
+                                # write comment
+                                smallfile.write("# timestamp:total_mem:used_mem\n")
+                                smallfile.write("---\n")
+                                self._print_metadata(jobid, jobinfo, host, smallfile)
+                                smallfile.write("metrics:\n")
+        
                         with open(small_fn, "a") as smallfile:
-                            smallfile.write(str(ts)+":"+perf_metrics["mem_total"]+":"+perf_metrics["mem_used"]+"\n")
+                            smallfile.write("  - "+str(ts)+":"+perf_metrics["mem_total"]+":"+perf_metrics["mem_used"]+"\n")
         
                 perfile.close()
         

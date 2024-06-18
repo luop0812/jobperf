@@ -2,7 +2,7 @@
 
 import os
 import glob
-from parser import parser
+from schedparser import parser
 from config import config
 
 def main():
